@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Maze Invaders</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="crt"></div>
+    <header>
+      <h1>Neon Maze Invaders</h1>
+      <p class="tagline">A 70s arcade fever dream with a modern glow.</p>
+    </header>
+
+    <main>
+      <section class="hud">
+        <div><span>Score</span><strong id="score">0</strong></div>
+        <div><span>Wave</span><strong id="wave">1</strong></div>
+        <div><span>Lives</span><strong id="lives">3</strong></div>
+        <div><span>Power</span><strong id="power">0%</strong></div>
+      </section>
+
+      <div class="game-wrap">
+        <canvas id="game" width="960" height="540"></canvas>
+        <div class="overlay" id="overlay">
+          <h2 id="status">Insert Coin</h2>
+          <p>
+            Move with <strong>WASD</strong> or <strong>Arrow Keys</strong>. Fire with
+            <strong>Space</strong>. Dash with <strong>Shift</strong> when charged. Eat
+            dots, blast invaders, survive the neon maze.
+          </p>
+          <button id="start">Start Run</button>
+        </div>
+      </div>
+
+      <section class="legend">
+        <div class="pill">Dots = score & charge</div>
+        <div class="pill">Power Orbs = slow-motion</div>
+        <div class="pill">Dash = phase through walls</div>
+        <div class="pill">Invader Waves = bonus multipliers</div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built for late-night arcades and synthwave skies.</p>
+    </footer>
+
+    <script src="game.js"></script>
+  </body>
+</html>
