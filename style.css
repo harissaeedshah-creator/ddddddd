@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+:root {
+  color-scheme: dark;
+  --bg: #0b0d1b;
+  --neon: #51f6ff;
+  --pink: #ff4fd8;
+  --purple: #7b5cff;
+  --yellow: #ffd64d;
+  --text: #f4f7ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Press Start 2P", system-ui;
+}
+
+body {
+  background: radial-gradient(circle at top, #1c2340, #090a15 60%);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px 40px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: var(--neon);
+  text-shadow: 0 0 14px rgba(81, 246, 255, 0.65);
+}
+
+.tagline {
+  margin-top: 12px;
+  color: rgba(244, 247, 255, 0.75);
+  font-size: 0.65rem;
+}
+
+main {
+  width: min(960px, 95vw);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  padding: 12px 16px;
+  border: 2px solid rgba(81, 246, 255, 0.4);
+  background: rgba(6, 10, 20, 0.6);
+  box-shadow: 0 0 16px rgba(81, 246, 255, 0.2);
+}
+
+.hud div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-transform: uppercase;
+  font-size: 0.55rem;
+  color: rgba(244, 247, 255, 0.7);
+}
+
+.hud strong {
+  font-size: 1rem;
+  color: var(--yellow);
+}
+
+.game-wrap {
+  position: relative;
+  border: 3px solid rgba(255, 79, 216, 0.5);
+  padding: 10px;
+  background: linear-gradient(145deg, rgba(10, 14, 30, 0.95), rgba(6, 8, 20, 0.9));
+  box-shadow: 0 0 24px rgba(255, 79, 216, 0.25);
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  background: #06070f;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(8, 8, 16, 0.78);
+  border: 1px solid rgba(81, 246, 255, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay h2 {
+  color: var(--pink);
+  font-size: 1rem;
+  text-shadow: 0 0 10px rgba(255, 79, 216, 0.6);
+}
+
+.overlay p {
+  font-size: 0.55rem;
+  line-height: 1.6;
+  color: rgba(244, 247, 255, 0.8);
+}
+
+button {
+  background: var(--neon);
+  color: #04060f;
+  border: none;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(81, 246, 255, 0.6);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.pill {
+  border: 1px solid rgba(123, 92, 255, 0.5);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.5rem;
+  color: rgba(244, 247, 255, 0.7);
+  background: rgba(14, 18, 34, 0.8);
+}
+
+footer {
+  margin-top: 24px;
+  font-size: 0.5rem;
+  opacity: 0.6;
+}
+
+.crt {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02) 1px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0) 3px
+  );
+  mix-blend-mode: screen;
+  opacity: 0.35;
+  z-index: 10;
+}
